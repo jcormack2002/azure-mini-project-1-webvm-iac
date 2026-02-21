@@ -1,0 +1,33 @@
+#cloud-config
+
+package_update: true
+packages:
+  - nginx
+  - git
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
+
+  # Remove default nginx page
+  - rm -f /var/www/html/index.nginx-debian.html
+
+  # Clean temp directory
+  - rm -rf /tmp/site
+
+  # Clone repo
+  - git clone https://github.com/StartBootstrap/startbootstrap-landing-page.git /tmp/site
+
+  # Clear web root
+  - rm -rf /var/www/html/*
+
+  # Copy dist files
+  - cp -r /tmp/site/dist/* /var/www/html/
+
+  # Fix permissions
+  - chown -R www-data:www-data /var/www/html
+
+  # Restart nginx
+  - systemctl restart nginx
+
+
