@@ -1,5 +1,10 @@
 Azure Mini Project 1 - Infrastructure as Code Web VM Deployment
 
+
+![Deployed Azure Website](BootstrapWebPage.PNG)
+_Deployed Boostrap landiing page automatically provisioned via Bicep and cloud-init._
+
+
 Overview
 
 This project aims to demonstrate the deployment of Azure infrasttructure using Infrastructure-as-Code (IaC) principles with Bicep, 
@@ -123,5 +128,6 @@ Next Steps:
    - Data modelling concepts
    - Azure Data Factory pipelines for automated ingestion
    - Power BI dashboards for analytics and visualisation
+
 
 Made By: Jonathan Cormack
